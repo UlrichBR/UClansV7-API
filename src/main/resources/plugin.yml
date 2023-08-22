@@ -1,0 +1,7 @@
+name: UltimateClans
+main: me.ulrich.clans.Clans
+version: 7.0.0
+author: UlrichBR
+website: https://polymart.org/team/ulrichcraft.99
+description: API.
+api-version: 1.13
