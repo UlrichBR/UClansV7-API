@@ -2,7 +2,6 @@ package me.ulrich.clans.api;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.Optional;
 
 import me.ulrich.clans.Clans;
@@ -35,11 +34,6 @@ public class RegionAPIManager implements RegionAPI {
 
 	@Override
 	public List<String> getImplementationPlugins() {
-		return null;
-	}
-
-	@Override
-	public List<Entry<String, RegionImplement>> findRegionByImplement(String pluginName) {
 		return null;
 	}
 
