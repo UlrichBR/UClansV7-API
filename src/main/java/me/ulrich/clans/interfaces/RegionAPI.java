@@ -3,7 +3,6 @@ package me.ulrich.clans.interfaces;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-import java.util.Map.Entry;
 
 public interface RegionAPI {
 
@@ -16,8 +15,6 @@ public interface RegionAPI {
 	boolean removeImplementation(String pluginName);
 
 	List<String> getImplementationPlugins();
-
-	List<Entry<String, RegionImplement>> findRegionByImplement(String pluginName);
 
 	Optional<RegionImplement> getRegionImplemented(String pluginName);
 }
