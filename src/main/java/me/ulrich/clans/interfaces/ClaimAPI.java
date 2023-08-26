@@ -9,6 +9,8 @@ import org.bukkit.Location;
 
 public interface ClaimAPI {
 
+	Optional<ClaimImplement> getPreferentialOrFirstImplement();
+
 	HashMap<String, ClaimImplement> getImplementedClaim();
 
 	boolean addImplementation(String pluginName, ClaimImplement region);
@@ -17,10 +19,12 @@ public interface ClaimAPI {
 
 	boolean removeImplementation(String pluginName);
 
-	List<String> getImplementationPlugins();
-
+	List<String> getImplementationPluginsName();
+	
 	List<Entry<String, ClaimImplement>> findClaimedLocationImplement(Location location);
 
 	Optional<ClaimImplement> getClaimImplemented(String pluginName);
+
+	HashMap<String, ClaimImplement> getImplementationPluginsData();
 
 }
