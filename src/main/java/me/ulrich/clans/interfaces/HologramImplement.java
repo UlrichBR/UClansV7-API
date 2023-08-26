@@ -22,5 +22,7 @@ public interface HologramImplement {
 	Optional<HoloData> updateHologram(String id, List<String>lines, Object...objects);
 
 	Optional<String> getPluginVersion();
+	
+	Optional<String> getPluginName();
 
 }
