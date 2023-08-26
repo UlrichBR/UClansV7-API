@@ -6,6 +6,8 @@ import java.util.Optional;
 
 public interface RegionAPI {
 
+	Optional<RegionImplement> getPreferentialOrFirstImplement();
+
 	HashMap<String, RegionImplement> getImplementedRegions();
 
 	boolean addImplementation(String pluginName, RegionImplement region);
@@ -14,7 +16,9 @@ public interface RegionAPI {
 
 	boolean removeImplementation(String pluginName);
 
-	List<String> getImplementationPlugins();
+	List<String> getImplementationPluginsNames();
+	
+	HashMap<String, RegionImplement> getImplementationPluginsData();
 
 	Optional<RegionImplement> getRegionImplemented(String pluginName);
 }
