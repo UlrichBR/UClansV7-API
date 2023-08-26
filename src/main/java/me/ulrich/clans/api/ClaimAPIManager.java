@@ -35,10 +35,6 @@ public class ClaimAPIManager implements ClaimAPI {
 		return false;
 	}
 
-	@Override
-	public List<String> getImplementationPlugins() {
-		return null;
-	}
 
 	@Override
 	public List<Entry<String, ClaimImplement>> findClaimedLocationImplement(Location location) {
@@ -48,6 +44,21 @@ public class ClaimAPIManager implements ClaimAPI {
 	@Override
 	public Optional<ClaimImplement> getClaimImplemented(String pluginName) {
 		return Optional.empty();
+	}
+
+	@Override
+	public Optional<ClaimImplement> getPreferentialOrFirstImplement() {
+		return Optional.empty();
+	}
+
+	@Override
+	public List<String> getImplementationPluginsName() {
+		return null;
+	}
+
+	@Override
+	public HashMap<String, ClaimImplement> getImplementationPluginsData() {
+		return null;
 	}
 
 	
