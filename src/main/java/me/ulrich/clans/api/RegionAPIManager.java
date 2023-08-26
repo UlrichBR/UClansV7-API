@@ -32,14 +32,25 @@ public class RegionAPIManager implements RegionAPI {
 		return false;
 	}
 
-	@Override
-	public List<String> getImplementationPlugins() {
-		return null;
-	}
 
 	@Override
 	public Optional<RegionImplement> getRegionImplemented(String pluginName) {
 		return Optional.empty();
+	}
+
+	@Override
+	public Optional<RegionImplement> getPreferentialOrFirstImplement() {
+		return Optional.empty();
+	}
+
+	@Override
+	public List<String> getImplementationPluginsNames() {
+		return null;
+	}
+
+	@Override
+	public HashMap<String, RegionImplement> getImplementationPluginsData() {
+		return null;
 	}
 
 
