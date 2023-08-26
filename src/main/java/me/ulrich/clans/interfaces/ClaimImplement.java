@@ -23,5 +23,7 @@ public interface ClaimImplement {
 	Optional<String> getClaimName(Location location);
 	
 	Optional<String> getPluginVersion();
+	
+	Optional<String> getPluginName();
 
 }
