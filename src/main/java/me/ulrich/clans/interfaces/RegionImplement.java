@@ -40,4 +40,5 @@ public interface RegionImplement {
 	
 	Optional<String> getPluginVersion();
 
+	Optional<String> getPluginName();
 }
