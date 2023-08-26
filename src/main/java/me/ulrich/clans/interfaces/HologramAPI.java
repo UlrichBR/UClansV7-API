@@ -3,11 +3,10 @@ package me.ulrich.clans.interfaces;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
-import java.util.Map.Entry;
 
 public interface HologramAPI {
 
-	HashMap<String, HologramImplement> getHologramAPI();
+	HashMap<String, HologramImplement> getImplementedHolograms();
 
 	boolean addImplementation(String pluginName, HologramImplement region);
 
@@ -15,9 +14,9 @@ public interface HologramAPI {
 
 	boolean removeImplementation(String pluginName);
 
-	List<String> getImplementationPlugins();
-
-	List<Entry<String, HologramImplement>> findHologramByImplement(String pluginName);
+	List<String> getImplementationPluginsNames();
+	
+	HashMap<String, HologramImplement> getImplementationPluginsData();
 
 	Optional<HologramImplement> getHologramImplemented(String pluginName);
 }
