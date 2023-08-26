@@ -1,7 +1,9 @@
 package me.ulrich.clans.interfaces;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -16,6 +18,8 @@ public interface RegionImplement {
 	
 	boolean isExitAllowed(Player player, Location location);
 	
+	boolean isEntryAllowed(Player player, Location location);
+
 	boolean isInRegion(Player player, String regionName);
 	
 	List<String> getPlayerRegion(Player player);
@@ -25,6 +29,14 @@ public interface RegionImplement {
 	List<String> getLocationRegion(Location loc);
 	
 	List<String> getWorldRegionList(World world);
+	
+	List<UUID> getOwners(Location loc);
+	
+	List<UUID> getMembers(Location loc);
+	
+	Location[] getCorders(Location loc);
+	
+	HashMap<String, String> getFlags(Location loc);
 	
 	Optional<String> getPluginVersion();
 
