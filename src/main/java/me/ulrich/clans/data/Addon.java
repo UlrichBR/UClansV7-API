@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.ulrich.clans.manager.addon.AddonClassloader;
-import me.ulrich.clans.manager.addon.Serializer;
+import me.ulrich.clans.loader.Serializer;
+import me.ulrich.clans.loader.addon.AddonClassloader;
 
 public abstract class Addon {
 
