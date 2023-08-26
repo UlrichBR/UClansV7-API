@@ -1,20 +1,28 @@
 package me.ulrich.clans.interfaces;
 
-import org.bukkit.entity.Player;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
+
 
 public interface MoneyAPI {
+
+	Optional<MoneyImplement> getPreferentialOrFirstImplement();
+
+	HashMap<String, MoneyImplement> getImplementedMoney();
+
+	boolean addImplementation(String pluginName, MoneyImplement region);
+
+	boolean hasPluginImplemented(String pluginName);
+
+	boolean removeImplementation(String pluginName);
+
+	Optional<MoneyImplement> getMoneyImplemented(String pluginName);
+
+	List<String> getImplementationPluginsNames();
 	
-	boolean hasMoney(Player player, int amount);
+	HashMap<String, MoneyImplement> getImplementationPluginsData();
 
-	boolean addMoney(Player player, int amount);
-
-	boolean withdrawMoney(Player player, int amount);
-
-	boolean isEnabled();
-
-
-
-	
 
 
 }
