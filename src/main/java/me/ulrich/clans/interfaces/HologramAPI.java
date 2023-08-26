@@ -6,6 +6,8 @@ import java.util.Optional;
 
 public interface HologramAPI {
 
+	Optional<HologramImplement> getPreferentialOrFirstImplement();
+	
 	HashMap<String, HologramImplement> getImplementedHolograms();
 
 	boolean addImplementation(String pluginName, HologramImplement region);
