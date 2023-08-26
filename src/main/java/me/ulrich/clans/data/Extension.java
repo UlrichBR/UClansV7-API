@@ -6,8 +6,8 @@ import java.util.HashMap;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.ulrich.clans.manager.addon.Serializer;
-import me.ulrich.clans.manager.extension.ExtensionClassloader;
+import me.ulrich.clans.loader.Serializer;
+import me.ulrich.clans.loader.extension.ExtensionClassloader;
 
 public abstract class Extension {
 
@@ -37,7 +37,7 @@ public abstract class Extension {
 		return null;
 	}
 
-	public void enable(JavaPlugin instance, File addonDataFolder, Serializer dataSerializer, Serializer configSerializer) {}
+	public void enable(JavaPlugin instance, File extensionDataFolder, Serializer dataSerializer, Serializer configSerializer) {}
 
 	protected boolean logThis(Exception e) {
 		return false;
@@ -73,7 +73,7 @@ public abstract class Extension {
 		return null;
 	}
 
-	public void setExtensionFiles(HashMap<String, InputStream> addonFiles) {}
+	public void setExtensionFiles(HashMap<String, InputStream> extensionFiles) {}
 
 	public String getRequire() {
 		return null;
