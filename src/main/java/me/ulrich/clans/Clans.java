@@ -37,7 +37,6 @@ public final class Clans extends JavaPlugin implements UClans{
 	private final BossBarAPIManager BossBarAPI;
 	private final LibAPIManager libAPI;
 	private final AddonAPIManager AddonAPI;
-	private HologramAPIManager hologramAPI;
 	private final ModerationAPIManager modAPI;
 	private final LevelAPIManager levelAPI;
 	private final CommandAPIManager commandAPI;
@@ -46,6 +45,7 @@ public final class Clans extends JavaPlugin implements UClans{
 	private final SyncAPIManager syncAPI;
 	private final RegionAPIManager regionAPI;
 	private final ClaimAPIManager claimAPI;
+	private final HologramAPIManager hologramAPI;
 
 	public Clans() {
 		this.ClanAPI = new ClanAPIManager(this);
@@ -63,6 +63,7 @@ public final class Clans extends JavaPlugin implements UClans{
 		this.syncAPI = new SyncAPIManager(this);
 		this.regionAPI = new RegionAPIManager(this);
 		this.claimAPI = new ClaimAPIManager(this);
+		this.hologramAPI = new HologramAPIManager(this);
 
 
 	}
