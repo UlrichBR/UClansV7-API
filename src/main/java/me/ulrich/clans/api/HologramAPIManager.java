@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+import me.ulrich.clans.Clans;
 import me.ulrich.clans.interfaces.HologramAPI;
 import me.ulrich.clans.interfaces.HologramImplement;
 
 public class HologramAPIManager implements HologramAPI {
+
+	public HologramAPIManager(Clans clans) {
+	}
 
 	@Override
 	public HashMap<String, HologramImplement> getImplementedHolograms() {
@@ -41,6 +45,11 @@ public class HologramAPIManager implements HologramAPI {
 
 	@Override
 	public Optional<HologramImplement> getHologramImplemented(String pluginName) {
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<HologramImplement> getPreferentialOrFirstImplement() {
 		return Optional.empty();
 	}
 
