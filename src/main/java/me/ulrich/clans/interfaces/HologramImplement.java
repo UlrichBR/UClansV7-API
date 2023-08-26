@@ -13,6 +13,8 @@ public interface HologramImplement {
 	
 	Optional<HoloData> createHologram(String id, Location loc, List<String>lines, Object...objects);
 	
+	void createHologramTimed(Long deleteAfterTicks, String id, Location loc, List<String> lines, Object... objects);
+
 	boolean deleteHolo(String id);
 	
 	Optional<HoloData> getHologram(String id);
