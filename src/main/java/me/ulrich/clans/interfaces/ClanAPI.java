@@ -11,147 +11,163 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import me.ulrich.clans.data.ClanData;
+import me.ulrich.clans.data.EncodedLocationData;
 import me.ulrich.clans.data.ClanEnum.AllyInviteReturn;
-import me.ulrich.clans.data.ClanEnum.ClanActions;
 import me.ulrich.clans.data.ClanEnum.PlaceholderTop;
-import me.ulrich.clans.data.ClanEnum.RivalAllyCount;
 import me.ulrich.clans.data.ClanEnum.RivalRemoveReturn;
+import me.ulrich.clans.data.ClanEnum.SettingsFlagsAccept;
+import me.ulrich.clans.data.ClanEnum.SettingsType;
 import me.ulrich.clans.data.HomesData;
 import me.ulrich.clans.data.ModerationData;
 
 public interface ClanAPI {
 
-	void reloadClanData(UUID uuid);
+	void saveClanData(ClanData clan, boolean asynchronously);
 	
-	void loadAllClanData();
-
-	void updateClanData(ClanData clan);
+	void deleteClanData(UUID clanUUID, boolean asynchronously);
+	
+	void reloadClanData(UUID clanUUID, boolean asynchronously);
+	
+	void loadAllClanData(boolean asynchronously);
+	
+	 HashMap<UUID, ClanData> getClanData();
+	
+	Optional<UUID> getClanByTag(String tag);
+	
+	Optional<ClanData> getClanDataByTag(String tag);
 	
 	boolean tagExists(String tag);
-
-	boolean isRival(UUID player1, UUID player2);
-
-	boolean isAlly(UUID player1, UUID player2);
-
-	boolean promotePlayer(UUID clanUUID, UUID promoted, Optional<ModerationData> next);
-
-	boolean demotePlayer(UUID clanUUID, UUID demoted, Optional<ModerationData> prev);
-
-	boolean kickPlayer(UUID clanUUID, UUID kicked);
-
-	boolean changeLeader(UUID clanUUID, UUID newleader);
-
-	boolean leaveClan(UUID player);
 	
-	boolean leaveClan(Player player);
+	boolean clanExists(UUID clanUUID);
+	
+	Optional<ClanData> getClan(UUID clanUUID);
+	
+	boolean verifyClan(UUID clanUUID);
+	
+	boolean allyAdd(UUID clanUUID1, UUID clanUUID2);
+	
+	boolean allyRemove(UUID clanUUID1, UUID clanUUID2);
 
-	boolean modDesc(ClanData clanData, String newDescription, Player sender);
+	AllyInviteReturn allySend(UUID senderid, UUID receiverid, boolean mult);
 
-	boolean modTag(ClanData clanData, String newTag, Player sender);
+	boolean rivalAdd(UUID clanUUID1, UUID clanUUID2);
+	
+	boolean rivalRemove(UUID clanUUID1, UUID clanUUID2);
+	
+	RivalRemoveReturn rivalRemoveSend(UUID senderid, UUID receiverid, boolean mult);
+	
+	boolean isClanAlly(UUID clan1UUID, UUID clan2UUID);
+	
+	boolean isClanRival(UUID clan1UUID, UUID clan2UUID);
+	
+	void clanMessageSend(UUID id, String text);
+	
+	void clanChatSend(Player sender, String message, boolean offsync);
+	
+	void clanChatSend(UUID sender, String message, boolean offsync);
+	
+	boolean promotePlayer(UUID id, UUID promoted, Optional<ModerationData> mod);
+	
+	boolean demotePlayer(UUID id, UUID demoted, Optional<ModerationData> mod);
+	
+	boolean banPlayer(UUID clanUUID, UUID playerUUID, UUID sender);
+	
+	boolean unbanPlayer(UUID clanUUID, UUID playerUUID);
+	
+	boolean kickPlayer(UUID clanUUID, UUID playerUUID, UUID sender);
+	
+	boolean changeLeader(UUID clanUUID, Player player);
+	
+	boolean changeLeader(UUID clanUUID, UUID playerUUID);
+	
+	boolean modTag(ClanData clan, String tag, Player sender);
+	
+	boolean modDesc(ClanData clan, String desc, Player sender);
+	
+	boolean changeSetting(ClanData clan, SettingsType type, SettingsFlagsAccept value);
+	
+	boolean toggleFF(ClanData clan);
+	
+	boolean deleteBanner(UUID clanUUID, Player player);
+
+	boolean setBanner(UUID clanUUID, Player player, ItemStack itemstack);
+		
+	boolean hasHome(UUID playerUUID, String home);
+	
+	boolean setHome(UUID player, Location location, String name);
+	
+	boolean deleteHome(UUID playerUUID, String name);
+	
+	Optional<Location> getHomeLocation(UUID player, String home);
+	
+	Optional<EncodedLocationData> getEncodedHomeLocation(UUID player, String home);
+	
+	Optional<HomesData> getHomeData(UUID player, String home);
+	
+	boolean deleteClan(UUID uuid);
+	
+	boolean deletePlayerClan(UUID player);
+	
+	Optional<ClanData> createNewClan(Player player, String tag, String desc, long date);
+	
+	void teleportDelay(Player player, Optional<EncodedLocationData> encodedLocation, boolean checkcooldown);
+		
+	List<ClanData> getAllClansData();
+	
+	List<String> getAllClansTags();
+	
+	List<UUID> getAllClansUUID();
+	
+	List<ClanData> getTopClansData(PlaceholderTop top);
+	
+	HashMap<UUID, Float> getTopClans(PlaceholderTop top);
+	
+	void sort(List<ClanData> clans, PlaceholderTop top);
+	
+	double getClanKDR(UUID clanUUID);
+	
+	boolean resetClanKDR(ClanData clan);
+	
+	boolean resetClanKDR(UUID clanUUID);
+	
+	boolean addExtraChest(UUID clanUUID, int amount, CommandSender sender);
+	
+	boolean addSlot(String tag, int amount, CommandSender sender);
+	
+	boolean addSlot(UUID clanUUID, int amount, CommandSender sender);
+	
+	boolean removeSlot(String tag, int amount, CommandSender sender);
+	
+	boolean removeSlot(UUID clanUUID, int amount, CommandSender sender);
+	
+	boolean setSlot(String tag, int amount, CommandSender sender);
+	
+	boolean setSlot(UUID clanUUID, int amount, CommandSender sender);
+	
+	boolean canMemberJoin(UUID clanUUID);
+	
+	boolean hasClanModerationOnline(UUID clanUUID);
+	
+	String parseText(UUID player, String text);
+	
+	List<ClanData> getRivalries(UUID clanUUID);
+	
+	List<ClanData> getAlliances(UUID clanUUID);
+	
+	boolean tryChangeModtag(Player player, String tag);
+	
+	boolean tryChangeDesc(Player player, String desc);
+	
+	boolean tryCreateHome(Player player,String name);
+	
+	boolean tryCreateClan(Player player, String tag);
+	
+	boolean hasAddonEnabled(String name);
+	
+	boolean hasExtensionEnabled(String name);
 
 	boolean toggleGlobalFF(CommandSender player);
 
-	boolean toggleGlobalFF(Player player);
-
-	boolean toggleFF(ClanData clanData);
-
-	boolean isLeader(UUID player);
-
-	boolean deleteHome(UUID clanUUID, String homeName);
-
-	boolean setHome(UUID player, Location location, String name);
-
-	boolean hasHome(UUID player, String homeName);
-
-	Location getHomeLocation(UUID player, String homeName);
-
-	HomesData getHomeData(UUID player, String homeName);
-
-	boolean deleteClan(UUID clanUUID);
-
-	boolean deletePlayerClan(UUID player);
-
-	ClanData createNewClan(Player player, String tag, String desc);
-
-	boolean clanExists(UUID clanUUID);
-
-	ClanData getClan(UUID clanUUID);
-
-	HashMap<UUID, Float> getTopClans(PlaceholderTop checktype);
-
-	boolean resetClanKDR(ClanData clanKDR, CommandSender sender);
-
-	boolean addExtraChest(UUID clanUUID, int amount, CommandSender sender);
-
-	boolean addSlot(String tag, int amount, CommandSender sender);
-
-	boolean removeSlot(String tag, int amount, CommandSender sender);
-
-	boolean setSlot(String tag, int amount, CommandSender sender);
-
-	boolean addPoint(UUID clanid, int amount, CommandSender sender);
-
-	boolean addPoint(UUID clanid, int amount, CommandSender sender, StringBuilder reason);
-	
-	boolean removePoint(UUID clanid, int amount, CommandSender sender);
-	
-	boolean removePoint(UUID clanid, int amount, CommandSender sender, StringBuilder reason);
-
-	boolean setPoint(UUID clanid, int amount, CommandSender sender);
-	
-	boolean setPoint(UUID clanid, int amount, CommandSender sender, StringBuilder reason);
-
-	int getPointsNextLevel(ClanData clanData);
-
-	void checkClanLevelUp(ClanData clanData, CommandSender player);
-
-	int slotsCount(ClanData clanData);
-
-	int allyRivalCount(ClanData clanData, RivalAllyCount type);
-
-	boolean hasClanModerationOnline(UUID clanUUID);
-
-	String parseText(UUID player, String text);
-
-	boolean hasAddonEnabled(String addonName);
-
-	HashMap<UUID, ClanData> getClanData();
-
-	List<Player> getChatspy();
-
-	boolean isGlobalFF();
-	
-	RivalRemoveReturn rivalRemoveSend(UUID clanUUID1, UUID clanUUID2, boolean mult);
-
-	void clanChatSendOffline(UUID sender, String message);
-
-	void clanMessageSend(UUID id, String text);
-
-	UUID getClanByTag(String tag);
-
-	void check_actions(ClanActions action, UUID clanid);
-
-	List<ClanData> getRivalries(UUID clanUUID);
-
-	List<ClanData> getAlliances(UUID clanUUID);
-
-	AllyInviteReturn allySend(UUID clanUUID1, UUID clanUUID2, boolean mult);
-
-	boolean deleteBanner(UUID clanid, Player player);
-
-	boolean setBanner(UUID clanid, Player player, ItemStack itemstack);
-
-	double getClanKDR(UUID clanUUID);
-
-	boolean addSlot(UUID clanUUID, int amount, CommandSender sender);
-
-	boolean removeSlot(UUID clanUUID, int amount, CommandSender sender);
-
-	boolean setSlot(UUID clanUUID, int amount, CommandSender sender);
-
-	
-
-	
 
 	
 
