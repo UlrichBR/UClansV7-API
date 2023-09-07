@@ -45,4 +45,5 @@ public interface LevelAPI {
 	
 	HashMap<String, PatentData> getPatentData();
 	
+	
 }
