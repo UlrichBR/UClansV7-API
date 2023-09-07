@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.ulrich.clans</groupId>
   <artifactId>Clans</artifactId>
-  <version>7.0.0-beta.1</version>
+  <version>7.0.0-beta.17</version>
   <name>UClansV7-API</name>
 
 	<properties>
@@ -104,7 +104,12 @@
 			<version>4.11.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+		<dependency>
+    <groupId>com.github.Anon8281</groupId>
+    <artifactId>UniversalScheduler</artifactId>
+    <version>0.1.6</version>
+    <scope>provided</scope>
+</dependency>
 	</dependencies>
 
 </project>
