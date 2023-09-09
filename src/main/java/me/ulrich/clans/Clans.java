@@ -15,6 +15,7 @@ import me.ulrich.clans.api.HooksAPIManager;
 import me.ulrich.clans.api.LevelAPIManager;
 import me.ulrich.clans.api.LibAPIManager;
 import me.ulrich.clans.api.LoggerAPIManager;
+import me.ulrich.clans.api.MapAPIManager;
 import me.ulrich.clans.api.ModerationAPIManager;
 import me.ulrich.clans.api.MoneyAPIManager;
 import me.ulrich.clans.api.PlayerAPIManager;
@@ -46,6 +47,7 @@ public final class Clans extends JavaPlugin implements UClans{
 	private final RegionAPIManager regionAPI;
 	private final ClaimAPIManager claimAPI;
 	private final HologramAPIManager hologramAPI;
+	private final  MapAPIManager mapAPI;
 
 	public Clans() {
 		this.ClanAPI = new ClanAPIManager(this);
@@ -64,6 +66,7 @@ public final class Clans extends JavaPlugin implements UClans{
 		this.regionAPI = new RegionAPIManager(this);
 		this.claimAPI = new ClaimAPIManager(this);
 		this.hologramAPI = new HologramAPIManager(this);
+		this.mapAPI = new MapAPIManager(this);
 
 
 	}
@@ -163,6 +166,11 @@ public final class Clans extends JavaPlugin implements UClans{
 
 	@Override
 	public HologramAPIManager getHologramAPI() {
+		return null;
+	}
+	
+	@Override
+	public MapAPIManager getMapAPI() {
 		return null;
 	}
 
