@@ -13,6 +13,7 @@ import me.ulrich.clans.api.HooksAPIManager;
 import me.ulrich.clans.api.LevelAPIManager;
 import me.ulrich.clans.api.LibAPIManager;
 import me.ulrich.clans.api.LoggerAPIManager;
+import me.ulrich.clans.api.MapAPIManager;
 import me.ulrich.clans.api.ModerationAPIManager;
 import me.ulrich.clans.api.MoneyAPIManager;
 import me.ulrich.clans.api.PlayerAPIManager;
@@ -23,9 +24,9 @@ public interface UClans {
 
 	JavaPlugin getPlugin();
 
-	ClanAPIManager getClanAPI();
+	@Deprecated ClanAPIManager getClanAPI();
 
-	PlayerAPIManager getPlayerAPI();
+	@Deprecated PlayerAPIManager getPlayerAPI();
 	
 	MoneyAPIManager getMoneyAPI();
 	
@@ -54,6 +55,9 @@ public interface UClans {
 	RegionAPIManager getRegionAPI();
 
 	HologramAPIManager getHologramAPI();
+	
+	MapAPIManager getMapAPI();
+
 	
 	void loadAddons();
 	void startTasks();
