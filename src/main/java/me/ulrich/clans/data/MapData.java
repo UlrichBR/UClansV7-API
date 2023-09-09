@@ -13,11 +13,13 @@ public class MapData {
 	private String markName;
 	private Location loc1;
 	private Location loc2;
+	private int borderSize;
 
-	public MapData(String markName, Location loc1, Location loc2, String borderColor, double borderOpacity, String fillColor, double fillOpacity, String finalDescription, Object... objects) {
+	public MapData(String markName, Location loc1, Location loc2, String borderColor, double borderOpacity, int borderSize, String fillColor, double fillOpacity, String finalDescription, Object... objects) {
 		this.setMarkName(markName);
 		this.setBorderColor(borderColor);
 		this.setBorderOpacity(borderOpacity);
+		this.setBorderSize(borderSize);
 		this.setFillColor(fillColor);
 		this.setFillOpacity(fillOpacity);
 		this.setFinalDescription(finalDescription);
@@ -96,5 +98,13 @@ public class MapData {
 
 	public void setLoc2(Location loc2) {
 		this.loc2 = loc2;
+	}
+
+	public int getBorderSize() {
+		return borderSize;
+	}
+
+	public void setBorderSize(int borderSize) {
+		this.borderSize = borderSize;
 	}
 }
