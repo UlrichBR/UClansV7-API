@@ -167,6 +167,8 @@ public interface ClanAPI {
 	boolean hasExtensionEnabled(String name);
 
 	boolean toggleGlobalFF(CommandSender player);
+	
+	boolean isGlobalFF();
 
 
 	
