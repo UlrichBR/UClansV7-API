@@ -465,6 +465,12 @@ public class ClanAPIManager implements ClanAPI {
 		return false;
 	}
 
+	@Override
+	public boolean isGlobalFF() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 }
