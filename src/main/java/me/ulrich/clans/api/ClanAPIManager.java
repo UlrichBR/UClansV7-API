@@ -236,6 +236,11 @@ public class ClanAPIManager implements ClanAPI {
 
 		return false;
 	}
+	
+	@Override
+	public Optional<ItemStack> getBanner(UUID clanUUID){
+		return Optional.empty();
+	}
 
 	@Override
 	public boolean hasHome(UUID playerUUID, String home) {
