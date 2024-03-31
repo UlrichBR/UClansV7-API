@@ -92,6 +92,8 @@ public interface ClanAPI {
 
 	boolean setBanner(UUID clanUUID, Player player, ItemStack itemstack);
 		
+	Optional<ItemStack> getBanner(UUID clanUUID);
+	
 	boolean hasHome(UUID playerUUID, String home);
 	
 	boolean setHome(UUID player, Location location, String name);
