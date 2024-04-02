@@ -139,4 +139,9 @@ public class LibAPIManager implements LibAPI {
 		return null;
 	}
 
+	@Override
+	public void resetTitle(Player p) {
+		
+	}
+
 }
