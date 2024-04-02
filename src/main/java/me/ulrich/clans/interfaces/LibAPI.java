@@ -14,6 +14,8 @@ import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 
 public interface LibAPI {
 
+	void resetTitle(Player p);
+	
 	void sendTitle(Player p, String msg, int fadeIn, int stay, int fadeOut);
 
 	void sendSubTitle(Player p, String msg, int fadeIn, int stay, int fadeOut);
@@ -57,5 +59,7 @@ public interface LibAPI {
 	HashMap<UUID, MyScheduledTask> getBossbarTasks();
 	
 	HashMap<UUID, MyScheduledTask> getLibTasks();
+
+	
 	
 }
