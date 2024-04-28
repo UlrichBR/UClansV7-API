@@ -8,6 +8,7 @@ import me.ulrich.clans.api.ClaimAPIManager;
 import me.ulrich.clans.api.ClanAPIManager;
 import me.ulrich.clans.api.CommandAPIManager;
 import me.ulrich.clans.api.DiscordAPIManager;
+import me.ulrich.clans.api.GuiAPIManager;
 import me.ulrich.clans.api.HologramAPIManager;
 import me.ulrich.clans.api.HooksAPIManager;
 import me.ulrich.clans.api.LevelAPIManager;
@@ -24,9 +25,9 @@ public interface UClans {
 
 	JavaPlugin getPlugin();
 
-	@Deprecated ClanAPIManager getClanAPI();
+	ClanAPIManager getClanAPI();
 
-	@Deprecated PlayerAPIManager getPlayerAPI();
+	PlayerAPIManager getPlayerAPI();
 	
 	MoneyAPIManager getMoneyAPI();
 	
@@ -57,6 +58,8 @@ public interface UClans {
 	HologramAPIManager getHologramAPI();
 	
 	MapAPIManager getMapAPI();
+	
+	GuiAPIManager getGuiAPI();
 
 	
 	void loadAddons();
