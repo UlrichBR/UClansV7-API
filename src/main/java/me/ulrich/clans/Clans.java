@@ -10,6 +10,7 @@ import me.ulrich.clans.api.ClaimAPIManager;
 import me.ulrich.clans.api.ClanAPIManager;
 import me.ulrich.clans.api.CommandAPIManager;
 import me.ulrich.clans.api.DiscordAPIManager;
+import me.ulrich.clans.api.GuiAPIManager;
 import me.ulrich.clans.api.HologramAPIManager;
 import me.ulrich.clans.api.HooksAPIManager;
 import me.ulrich.clans.api.LevelAPIManager;
@@ -50,7 +51,8 @@ public final class Clans extends JavaPlugin implements UClans{
 	private final HologramAPIManager hologramAPI;
 	private final MapAPIManager mapAPI;
 	private final ScoreboardAPIManager scoreboardAPI;
-	
+	private final GuiAPIManager guiAPI;
+
 	public Clans() {
 		this.ClanAPI = new ClanAPIManager(this);
 		this.PlayerAPI = new PlayerAPIManager(this);
@@ -70,6 +72,7 @@ public final class Clans extends JavaPlugin implements UClans{
 		this.hologramAPI = new HologramAPIManager(this);
 		this.mapAPI = new MapAPIManager(this);
 		this.scoreboardAPI = new ScoreboardAPIManager(this);
+		this.guiAPI = new GuiAPIManager(this);
 
 
 	}
@@ -182,7 +185,11 @@ public final class Clans extends JavaPlugin implements UClans{
 	}
 	
 	public ScoreboardAPIManager getScoreboardAPI() {
-		return scoreboardAPI;
+		return null;
+	}
+	
+	public GuiAPIManager getGuiAPI() {
+		return null;
 	}
 
 }
