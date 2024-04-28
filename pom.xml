@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.ulrich.clans</groupId>
   <artifactId>Clans</artifactId>
-  <version>7.8.5</version>
+  <version>7.9.0</version>
   <name>UClansV7-API</name>
 
 	<properties>
