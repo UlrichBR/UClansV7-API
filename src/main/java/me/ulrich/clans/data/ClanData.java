@@ -21,7 +21,7 @@ public class ClanData {
 	private String tagNoColor;
 	private List<UUID> mods;
 	private ClanRivalAlly rivalAlly;
-	private int bank;
+	private Double bank;
 	private int level;
 	private ClanQuestInfoData quest;
 	private SettingsData settings;
@@ -34,7 +34,7 @@ public class ClanData {
 	private String webhook;
 	private long loadCache;
 
-	public ClanData(UUID id, String tag, String desc, UUID leader, boolean verified, List<HomesData> home, long creationDate, ClanStats clanStats, List<UUID> members, List<UUID> onlineMembers, boolean ff, double kdr, String tagNoColor, List<UUID> mods, List<UUID> banned, ClanRivalAlly rivalAlly, int bank, int level, ClanQuestInfoData quest, SettingsData settings, ChestSettingsData chestSettings, String banner, int maxlevel, int extraSlots, String patent, String webhook, long loadCache) {
+	public ClanData(UUID id, String tag, String desc, UUID leader, boolean verified, List<HomesData> home, long creationDate, ClanStats clanStats, List<UUID> members, List<UUID> onlineMembers, boolean ff, double kdr, String tagNoColor, List<UUID> mods, List<UUID> banned, ClanRivalAlly rivalAlly, Double bank, int level, ClanQuestInfoData quest, SettingsData settings, ChestSettingsData chestSettings, String banner, int maxlevel, int extraSlots, String patent, String webhook, long loadCache) {
 		this.setId(id);
 		this.setTag(tag);
 		this.setDesc(desc);
@@ -186,11 +186,11 @@ public class ClanData {
 		this.rivalAlly = rivalAlly;
 	}
 
-	public int getBank() {
+	public Double getBank() {
 		return bank;
 	}
 
-	public void setBank(int bank) {
+	public void setBank(Double bank) {
 		this.bank = bank;
 	}
 
