@@ -2,16 +2,55 @@ package me.ulrich.clans.data;
 
 public class ClanEnum {
 	
-	public enum ClanLangs{
-		EN, PL, TR, RU, ES, HU, GE;
+	public enum ClansExtensions{
+		CMIHolograms,
+		DecentHolograms,
+		Dynmap,
+		ElementalGems,
+		Holograms,
+		HolographicDisplays,
+		PlayerPoints,
+		TokenEnchantMoney,
+		Vault,
+		WorldGuardRegion,
+		FancyHolograms,
+		GriefPrevention,
+		TAB,
+		CMIScoreboard,
+		FeatherBoard,
+		SternalBoard,
+		SimpleCore,
+		BlueMap,
+		TNE;
+		
+		
 	}
+	
+	public enum ExtensionsReturn {
+		ERROR_REPO, ALREADY_UPDATED, ERROR_DOWNLOAD, SUCCESS_DOWNLOAD, ALREADY_EXISTS, NEED_RELOAD_ADDONS, GENERAL_ERROR
+		
+		
+	}
+	
+	public enum ClanLangs{
+		EN, PL, TR, RU, ES, HU, GE, BR;
+	}
+	
 	
 	public enum LoggerTime{
 		ALL, DAILY, WEEKLY, MONTHLY, YEARLY,
 	}
 	
+	public enum MailTime{
+		ALL, READ, UNREAD,
+	}
+	
 	public enum PlayerLeaveReaction{
 		KICK, LEAVE;
+	}
+	
+	public enum Agent {
+		POLYMART, BUILDBYBIT, NONE;
 	}
 	
 	public enum BannerFilter{
@@ -84,7 +123,7 @@ public class ClanEnum {
 	}
 	
 	public enum SettingsType{
-		WARINVITE, ALLYSHAREDCHAT, JOINLEAVE, ALLYSHAREDHOME, CLANFF, OPENED, PUBLICHOMES;
+		WARINVITE, ALLYSHAREDCHAT, JOINLEAVE, ALLYSHAREDHOME, CLANFF, OPENED, PUBLICHOMES, RECEIVEMAILALLIES, RECEIVEMAILALL;
 	}
 	
 	public enum PlayerSettingsType{
@@ -92,7 +131,7 @@ public class ClanEnum {
 	}
 	
 	public enum RedisType{
-		EMPTY, CLANUPDATEUUID, PLAYERUPDATEUUID, INVITEUPDATEUUID, MODERATIONUPDATEUUID, PLAYERTELEPORT, CLANCHAT, CUSTOM, CLEARPRORYEDPLAYERS, PROXYEDPLAYERS;
+		EMPTY, CLANUPDATEUUID, PLAYERUPDATEUUID, INVITEUPDATEUUID, MODERATIONUPDATEUUID, PLAYERTELEPORT, CLANCHAT, CUSTOM, CLEARPRORYEDPLAYERS, PROXYEDPLAYERS, EVENTMESSAGES;
 	}
 	
 	public enum SettingsFlagsAccept {
@@ -108,7 +147,7 @@ public class ClanEnum {
 	}
 	
 	public enum ChatDataType {
-		CHANGENICKNAME, COMMANDUNKNOWNPLAYER, COMMANDUNKNOWNADMIN, CLANLEVELRECEIVED, CLANPATENTRECEIVED, CLANHOMECREATE, CLANCREATE, CLANMODTAG, CLANDESC, INVITERECEIVE, CLANREGROUPRECEIVE, CLANINVITE, CLANALLYRECEIVE, CLANRIVALREMOVE;
+		CHANGENICKNAME, COMMANDUNKNOWNPLAYER, COMMANDUNKNOWNADMIN, CLANLEVELRECEIVED, CLANPATENTRECEIVED, CLANHOMECREATE, CLANCREATE, CLANMODTAG, CLANDESC, INVITERECEIVE, CLANREGROUPRECEIVE, CLANINVITE, CLANALLYRECEIVE, CLANRIVALREMOVE, CLANDISCORDCREATEWEBHOOK;
 	}
 	
 	public enum QueueSync{
