@@ -31,4 +31,6 @@ public interface SyncAPI {
 	
 	void solveProxiedPlayers(String jsonArray);
 
+	String getServerName();
+
 }
