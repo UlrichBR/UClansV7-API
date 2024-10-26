@@ -1,6 +1,5 @@
 package me.ulrich.clans.api;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -76,5 +75,10 @@ public class SyncAPIManager implements SyncAPI {
 	@Override
 	public void solveProxiedPlayers(String jsonArray) {
 		
+	}
+
+	@Override
+	public String getServerName() {
+		return null;
 	}
 }
