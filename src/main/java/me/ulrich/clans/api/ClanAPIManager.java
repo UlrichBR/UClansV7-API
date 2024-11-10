@@ -9,6 +9,7 @@ import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.json.JSONObject;
 
 import me.ulrich.clans.Clans;
 import me.ulrich.clans.data.ClanData;
@@ -472,8 +473,22 @@ public class ClanAPIManager implements ClanAPI {
 
 	@Override
 	public boolean isGlobalFF() {
-		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public boolean setJsonMeta(UUID clanUUID, String jsonMetaString) {
+		return false;
+	}
+
+	@Override
+	public boolean setJsonMeta(UUID clanUUID, JSONObject jsonMeta) {
+		return false;
+	}
+
+	@Override
+	public Optional<String> getJsonMeta(UUID clanUUID) {
+		return Optional.empty();
 	}
 
 	
